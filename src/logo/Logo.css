@@ -1,11 +1,12 @@
 .Logo {
   cursor: pointer;
+  text-align: left;
 }
 
 .Logo-texto {
-  
 }
 
 .Logo-icone {
-  height: 20vmin;
+  height: 10vmin;
+  margin-left: 40rem;
 }

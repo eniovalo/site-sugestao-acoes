@@ -7,14 +7,6 @@ interface SugestaoAcaoProps {
 }
 
 class SugestaoAcao extends Component<SugestaoAcaoProps, any> {
-  constructor(props: SugestaoAcaoProps) {
-    super(props);
-
-    this.state = {
-      acoesSugeridas: this.recuperarSugestaoAcoes()
-    };
-  }
-
   recuperarSugestaoAcoes = () => {
     const acoesBB = [
       {
@@ -57,16 +49,22 @@ class SugestaoAcao extends Component<SugestaoAcaoProps, any> {
         return acoesBB;
       case 341:
         return acoesItau;
+      default:
+        return acoesBB;
     }
   };
 
   gerarJSXListaAcoesSugeridas = () => {
-    return this.state.acoesSugeridas.map((acao: any, index: number) => {
+    let acoesSugeridas = this.recuperarSugestaoAcoes();
+
+    return acoesSugeridas.map((acao: any, index: number) => {
       return (
         <div key={index}>
-          <span>{acao.percentual}%</span>
-          <span>{acao.acao}</span>
-          <span>({acao.codigoAcao})</span>
+          <div className="Sugestao-acao-div-acoes-descricao">
+            <span>{acao.percentual}% </span>
+            <span>{acao.acao} </span>
+            <span>({acao.codigoAcao}) </span>
+          </div>
           <span>R$ {this.props.valorAplicacao * (acao.percentual / 100)}</span>
         </div>
       );

@@ -11,3 +11,12 @@
 .App-conteudo {
   color: white;
 }
+
+.App-div-aplicacao {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.App-label-aplicacao {
+  margin-right: 1rem;
+}

@@ -13,14 +13,19 @@ const App: React.FC = () => {
       <article className="App-conteudo">
         <Logo logo="1" onClick={() => setCodigoBanco(1)} />
         <Logo logo="341" onClick={() => setCodigoBanco(341)} />
-        <input
-          id="inputValorAplicacao"
-          type="number"
-          min="1000"
-          step="50"
-          value={valorAplicacao}
-          onChange={event => setValorAplicacao(parseInt(event.target.value))}
-        />
+        <div className="App-div-aplicacao">
+          <label className="App-label-aplicacao" htmlFor="inputValorAplicacao">
+            Valor para aplicação:
+          </label>
+          <input
+            id="inputValorAplicacao"
+            type="number"
+            min="1000"
+            step="50"
+            value={valorAplicacao}
+            onChange={event => setValorAplicacao(parseInt(event.target.value))}
+          />
+        </div>
         <SugestaoAcao
           valorAplicacao={valorAplicacao}
           codigoBanco={codigoBanco}

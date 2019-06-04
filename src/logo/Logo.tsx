@@ -33,7 +33,12 @@ class Logo extends Component<LogoProps, any> {
   render() {
     return (
       <div className="Logo" onClick={this.props.onClick}>
-        <img className="Logo-icone" src={this.state.icone} alt="logo do BB" />
+        <img
+          className="Logo-icone"
+          src={this.state.icone}
+          width="50"
+          alt="logo do banco"
+        />
         <span className="Logo-texto">{this.state.descricao}</span>
       </div>
     );
